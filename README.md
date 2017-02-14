@@ -12,7 +12,8 @@ A simple, automatic UUID generator for any model based on Laravel 5.4 , by using
 ### What is a UUID?
 
 A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. is a 36 character long identifier made up of 32 32 alphanumeric characters with four hyphens in amongst it.
-for example:**123e4567-e89b-12d3-a456-426655440000** containing letters and numbers. that will uniquely identify something. you can read more [here](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+
+For example:**123e4567-e89b-12d3-a456-426655440000** containing letters and numbers. that will uniquely identify something. you can read more [here](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
 ### What are the benefits?
 
@@ -62,7 +63,7 @@ Finally, you'll also need to add the ServiceProvider in `config/app.php`
 
 ## Usage
 
-### Migrations
+#### Migrations
 
 **1)** Replace increments method
 
@@ -103,7 +104,7 @@ Schema::create('users', function (Blueprint $table) {
 
 ------
 
-### Models
+#### Models
 
 **1)** Removing auto increment for model
 
