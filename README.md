@@ -22,7 +22,7 @@ To get started, require this package
  composer require emadadly/laravel-uuid
 ```
 
-**OR Via composer.json file**
+**Via composer.json file**
 
 Add the following to the `require` section of your projects `composer.json` file.
 ``` php
@@ -48,9 +48,9 @@ Finally, you'll also need to add the ServiceProvider in `config/app.php`
 
 ## Usage
 
-#### Migrations
+### 1) Migrations
 
-** Firstly: **
+**Firstly: Replace increments method**
 
 when using the migration that comes out by default Or when manually created, You should replace.
 
@@ -64,7 +64,7 @@ $table->uuid('id');
 ```
 it's will create a char(36) inside of our database schema, To be ready to receive Uuid
 
-** Secondly: **
+**Secondly: Set primary key**
 
 In the first step we have removed the increment type which resulted in the removal of primary key, now the schema builder doesn’t know the primary key.
 So we need to add that manually.
@@ -75,7 +75,7 @@ Add at down schema
 $table->primary('id');
 ```
 
-** Simply, the schema seems something like this. **
+> Simply, the schema seems something like this.
 
 ``` php
 Schema::create('users', function (Blueprint $table) {
@@ -87,22 +87,22 @@ Schema::create('users', function (Blueprint $table) {
 });
 ```
 
-#### Models
+### 2) Models
 
-** Firstly : Removing auto increment for model**
+**Firstly : Removing auto increment for model**
 
 Laravel by default will be auto increment the Primary Key when you create a new row. So we can turn off this feature by adding following attribute in our model.
 
 ``` php
 public $incrementing = false;
 ```
-** : Using the trait in model **
+**Secondly : Using the trait in model**
 
 To set up a model to using Uuid, simply use the Uuids trait:
 
 ``` php
 use Illuminate\Database\Eloquent\Model;
-use emadadly\larauuid\UUIDManager;
+use Emadadly\laravel-uuid\UUIDManager;
 
 class ExampleModel extends Model
 {
