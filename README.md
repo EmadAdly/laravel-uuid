@@ -161,17 +161,17 @@ If you discover any security related issues, please email thedevmark@gmail.com i
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/emadadly/laravel-uuid/laravel-uuid.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/emadadly/laravel-uuid.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/emadadly/laravel-uuid/laravel-uuid/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/emadadly/laravel-uuid/laravel-uuid.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/emadadly/laravel-uuid/laravel-uuid.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/emadadly/laravel-uuid/laravel-uuid.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/emadadly/laravel-uuid/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/emadadly/laravel-uuid.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/emadadly/laravel-uuid.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/emadadly/laravel-uuid.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/emadadly/laravel-uuid/laravel-uuid
-[link-travis]: https://travis-ci.org/emadadly/laravel-uuid/laravel-uuid
-[link-scrutinizer]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid/laravel-uuid/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid/laravel-uuid
-[link-downloads]: https://packagist.org/packages/emadadly/laravel-uuid/laravel-uuid
+[link-packagist]: https://packagist.org/packages/emadadly/laravel-uuid
+[link-travis]: https://travis-ci.org/EmadAdly/laravel-uuid
+[link-scrutinizer]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid
+[link-downloads]: https://packagist.org/packages/emadadly/laravel-uuid
 [link-author]: https://github.com/emadadly
 [link-contributors]: ../../contributors
