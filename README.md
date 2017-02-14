@@ -14,9 +14,13 @@ A simple, automatic UUID generator for any model based on Laravel 5.4 , by using
 A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. which is a set of 32 alphanumeric characters with four hyphens in amongst it. containing letters and numbers. that will uniquely identify something.
 
 ### What are the benefits?
-With distributed systems you can be pretty confident that the primary key’s will never collide.
+
+1. With distributed systems you can be pretty confident that the primary key’s will never collide.
+
 2. When building a large scale application when an auto increment primary key is not ideal.
+
 3. It makes replication trivial (as opposed to int’s, which makes it REALLY hard)
+
 4. Safe enough doesn’t show the user that you are getting information by id, for example https://example.com/user/25/settings
 
 
