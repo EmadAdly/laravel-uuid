@@ -1,22 +1,23 @@
 {
-    "name": "emadadly/larauuid",
+    "name": "emadadly/laravel-uuid",
     "type": "library",
-    "description": ":UUID auto generator for Laravel 5",
+    "description": "A simple, automatic UUID generator for any model based on Laravel.",
     "keywords": [
         "emadadly",
-        "larauuid",
+        "laravel-uuid",
+        "laravel-guid",
         "UUID",
         "GUID",
         "Laravel",
         "generator"
     ],
-    "homepage": "https://github.com/emadadly/larauuid",
+    "homepage": "https://github.com/emadadly/laravel-uuid",
     "license": "MIT",
     "authors": [
         {
-            "name": ":Emad Adly",
-            "email": ":thedevmark@gmail.com",
-            "homepage": ":http://devmark.net",
+            "name": "Emad Adly",
+            "email": "thedevmark@gmail.com",
+            "homepage": "http://devmark.net",
             "role": "Developer"
         }
     ],
