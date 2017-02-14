@@ -64,7 +64,7 @@ Finally, you'll also need to add the ServiceProvider in `config/app.php`
 
 ### Migrations
 
-**Firstly:** Replace increments method
+**1)** Replace increments method
 
 when using the migration that comes out by default Or when manually created, You should replace.
 
@@ -78,7 +78,7 @@ $table->uuid('id');
 ```
 it's will create a char(36) inside of our database schema, To be ready to receive Uuid
 
-**Secondly:** Set primary key
+**2)** Set primary key
 
 In the first step we have removed the increment type which resulted in the removal of primary key, now the schema builder doesn’t know the primary key.
 So we need to add that manually.
@@ -105,14 +105,14 @@ Schema::create('users', function (Blueprint $table) {
 
 ### Models
 
-**Firstly :** Removing auto increment for model
+**1)** Removing auto increment for model
 
 Laravel by default will be auto increment the Primary Key when you create a new row. So we can turn off this feature by adding following attribute in our model.
 
 ``` php
 public $incrementing = false;
 ```
-**Secondly :** Using the trait in model
+**2)** Using the trait in model
 
 To set up a model to using Uuid, simply use the Uuids trait:
 
