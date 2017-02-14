@@ -40,7 +40,7 @@ Finally, you'll also need to add the ServiceProvider in `config/app.php`
 ``` php
   'providers' => [
         ...
-        Emadadly\laravel-uuid\LaravelUuidServiceProvider::class,
+        Emadadly\laravelUuid\LaravelUuidServiceProvider::class,
     ],
 ```
 
@@ -102,7 +102,7 @@ To set up a model to using Uuid, simply use the Uuids trait:
 
 ``` php
 use Illuminate\Database\Eloquent\Model;
-use Emadadly\laravel-uuid\UUIDManager;
+use Emadadly\laravelUuid\UUIDManager;
 
 class ExampleModel extends Model
 {
