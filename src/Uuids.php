@@ -1,7 +1,7 @@
 <?php
-namespace emadadly\larauuid;
+namespace Emadadly\LaravelUuid;
 
-use emadadly\larauuid\UUIDManager;
+use Emadadly\LaravelUuid\UUIDManager;
 
 trait Uuids
 {

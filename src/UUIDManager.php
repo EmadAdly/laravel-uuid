@@ -1,6 +1,6 @@
 <?php 
 
-namespace emadadly\larauuid;
+namespace Emadadly\LaravelUuid;
 
 class UUIDManager
 {

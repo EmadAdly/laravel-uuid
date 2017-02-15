@@ -6,6 +6,7 @@
         "emadadly",
         "laravel-uuid",
         "laravel-guid",
+        "laravel Uuid",
         "UUID",
         "GUID",
         "Laravel",
@@ -22,8 +23,9 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.1",
-        "php" : "~5.6|~7.0"
+        "php" : "~5.6|~7.0",
+        "illuminate/support": "5.2.*|5.3.*|5.4.*"
+
     },
     "require-dev": {
         "phpunit/phpunit" : "~4.0||~5.0",
@@ -31,12 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-            "emadadly\\larauuid\\": "src"
+            "Emadadly\\LaravelUuid\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "emadadly\\larauuid\\": "tests"
+            "Emadadly\\LaravelUuid\\": "tests"
         }
     },
     "scripts": {

@@ -55,7 +55,7 @@ Finally, you'll also need to add the ServiceProvider in `config/app.php`
 ``` php
   'providers' => [
         ...
-        Emadadly\laravelUuid\LaravelUuidServiceProvider::class,
+        Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
     ],
 ```
 
@@ -113,13 +113,13 @@ Laravel by default will be auto increment the Primary Key when you create a new 
 ``` php
 public $incrementing = false;
 ```
-**2)** Using the trait in model
+**2)** Using the trait in any model
 
 To set up a model to using Uuid, simply use the Uuids trait:
 
 ``` php
 use Illuminate\Database\Eloquent\Model;
-use Emadadly\laravelUuid\UUIDManager;
+use Emadadly\LaravelUuid\Uuids;
 
 class ExampleModel extends Model
 {

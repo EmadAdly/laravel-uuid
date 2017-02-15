@@ -1,8 +1,8 @@
 <?php
 
-namespace emadadly\larauuid\Facades;
+namespace emadadly\laraveluuid\Facades;
 
-use emadadly\larauuid\UUID;
+use emadadly\laraveluuid\UUIDManager;
 use Illuminate\Support\Facades\Facade;
 
 class UUID extends Facade
@@ -14,6 +14,6 @@ class UUID extends Facade
      */
     protected static function getFacadeAccessor()
     {
-      return UUID::class;
+      return UUIDManager::class;
     }
 }
