@@ -5,7 +5,7 @@
 [![Build Status][ico-travis]][link-travis]
 [![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
+<!-- [![Total Downloads][ico-downloads]][link-downloads] -->
 
 A simple, automatic UUID generator for any model based on Laravel 5.4 , by using this package will automatically generate Uuid and assign it to id field. you can use it for any model.
 
@@ -47,7 +47,7 @@ Add the following to the `require` section of your projects `composer.json` file
 Run composer update to download the package
 
 ``` bash
- php composer update
+ composer update
 ```
 
 Finally, you'll also need to add the ServiceProvider in `config/app.php`
