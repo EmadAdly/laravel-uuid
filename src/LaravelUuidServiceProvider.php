@@ -20,7 +20,11 @@ class LaravelUuidServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-  //
+        if (function_exists('config_path')) {
+            $this->publishes([
+                realpath(__DIR__.'/../config/uuid.php') => config_path('uuid.php'),
+            ]);
+        }
     }
 
     /**
