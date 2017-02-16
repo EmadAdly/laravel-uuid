@@ -59,61 +59,47 @@ Finally, you'll also need to add the ServiceProvider in `config/app.php`
     ],
 ```
 
+You could also publish the config file:
 
+``` bash
+php artisan vendor:publish --provider="Emadadly\LaravelUuid\LaravelUuidServiceProvider"
+```
+
+and set your default_uuid_column setting, if you have an app-wide default. 
+
+Our package assume the column is `uuid` by default.
 
 ## Usage
 
 #### Migrations
 
-**1)** Replace increments method
 
-when using the migration that comes out by default Or when manually created, You should replace.
-
-``` php
-$table->increments('id');
-```
-to
+When using the migration you should add `uuid` as column type, and set the name it the same name in the `config/uuid.php` file.
 
 ``` php
-$table->uuid('id');
+$table->uuid('uuid');
 ```
-it's will create a char(36) inside of our database schema, To be ready to receive Uuid
+it's will create column uuin name and a char(36) inside of our database schema, To be ready to receive Uuids.
 
-**2)** Set primary key
 
-In the first step we have removed the increment type which resulted in the removal of primary key, now the schema builder doesn’t know the primary key.
-So we need to add that manually.
-
-Add at down schema
-
-``` php
-$table->primary('id');
-```
 
 > Simply, the schema seems something like this.
 
 ``` php
 Schema::create('users', function (Blueprint $table) {
-    $table->uuid('id');
+	$table->increments('id');
+    $table->uuid('uuid');
     ....
     ....
+    $table->timestamps();
 
-    $table->primary('id');
 });
 ```
 
-------
 
 #### Models
 
-**1)** Removing auto increment for model
-
-Laravel by default will be auto increment the Primary Key when you create a new row. So we can turn off this feature by adding following attribute in our model.
-
-``` php
-public $incrementing = false;
-```
-**2)** Using the trait in any model
+Use this trait in any model.
 
 To set up a model to using Uuid, simply use the Uuids trait:
 
@@ -125,14 +111,27 @@ class ExampleModel extends Model
 {
     use Uuids;
 
-   public $incrementing = false;
+
 }
 ```
-When you create a new instance of a Model which uses Uuids, larave-uuid package will automatically add Uuid.
+
+#### Controller
+
+When you create a new instance of a model which uses Uuids, our package will automatically add Uuid.
 
 ``` php
-// 'Uuid' will automatically generate and assign id field by laravel-uuid package.
+// 'Uuid' will automatically generate and assign id field.
 $model = ExampleModel::create(['name' => 'whatever']);
+```
+
+Also when use show, update or delete method inside the Controller, it very easy to implement through `ExampleModel::uuid()` scope method
+
+``` php
+    public function show($uuid)
+    {
+            $example = ExampleModel::uuid($uuid);
+            return response()->json(['example' => $example]);
+    }
 ```
 
 ## Change log
