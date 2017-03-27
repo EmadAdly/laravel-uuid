@@ -87,7 +87,8 @@ it's will create column uuin name and a char(36) inside of our database schema, 
 
 ``` php
 Schema::create('users', function (Blueprint $table) {
-	$table->increments('id');
+
+    $table->increments('id');
     $table->uuid('uuid');
     ....
     ....
