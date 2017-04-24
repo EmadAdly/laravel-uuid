@@ -7,13 +7,16 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 <!-- [![Total Downloads][ico-downloads]][link-downloads] -->
 
-A simple, automatic UUID generator for any model based on Laravel 5.4 , by using this package will automatically generate Uuid and assign it to id field. you can use it for any model.
+A simple, automatic UUID generator for any model based on Laravel 5.4 , By using this package you will get when each new entry on :
+
+* Generate `uuid` automatically .
+* Assign it to `uuid` field in database automatically.
+* easy find it based `uuid` method.
 
 ### What is a UUID?
 
 A universally unique identifier (UUID) is a 128-bit number used to identify information in computer systems. is a 36 character long identifier made up of 32 alphanumeric characters with four hyphens in amongst it.
-
-For example:**123e4567-e89b-12d3-a456-426655440000** containing letters and numbers. that will uniquely identify something. you can read more [here](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+For example:`123E4567-E89b-12D3-A456-426655440000` containing letters and numbers. that will uniquely identify something. you can read more [here](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 
 ### What are the benefits?
 
@@ -23,7 +26,7 @@ For example:**123e4567-e89b-12d3-a456-426655440000** containing letters and numb
 
 3. It makes replication trivial (as opposed to int’s, which makes it REALLY hard)
 
-4. Safe enough doesn’t show the user that you are getting information by id, for example https://example.com/user/25/settings
+4. Safe enough doesn’t show the user that you are getting information by id, for example `https://example.com/user/25/settings`
 
 
 
@@ -31,13 +34,13 @@ For example:**123e4567-e89b-12d3-a456-426655440000** containing letters and numb
 
 To get started, require this package
 
-**Via Composer**
+- Via Composer
 
 ``` bash
  composer require emadadly/laravel-uuid
 ```
 
-**Via composer.json file**
+- Via composer.json file
 
 Add the following to the `require` section of your projects `composer.json` file.
 ``` php
@@ -53,10 +56,10 @@ Run composer update to download the package
 Finally, you'll also need to add the ServiceProvider in `config/app.php`
 
 ``` php
-  'providers' => [
-        ...
-        Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
-    ],
+'providers' => [
+   ...
+   Emadadly\LaravelUuid\LaravelUuidServiceProvider::class,
+],
 ```
 
 You could also publish the config file:
@@ -88,12 +91,11 @@ it's will create column uuin name and a char(36) inside of our database schema, 
 ``` php
 Schema::create('users', function (Blueprint $table) {
 
-    $table->increments('id');
-    $table->uuid('uuid');
-    ....
-    ....
-    $table->timestamps();
-
+  $table->increments('id');
+  $table->uuid('uuid');
+  ....
+  ....
+  $table->timestamps();
 });
 ```
 
@@ -110,9 +112,8 @@ use Emadadly\LaravelUuid\Uuids;
 
 class ExampleModel extends Model
 {
-    use Uuids;
-
-
+  use Uuids;
+  ....
 }
 ```
 
@@ -128,35 +129,17 @@ $model = ExampleModel::create(['name' => 'whatever']);
 Also when use show, update or delete method inside the Controller, it very easy to implement through `ExampleModel::uuid()` scope method
 
 ``` php
-    public function show($uuid)
-    {
-            $example = ExampleModel::uuid($uuid);
-            return response()->json(['example' => $example]);
-    }
+public function show($uuid)
+{
+  $example = ExampleModel::uuid($uuid);
+  return response()->json(['example' => $example]);
+}
 ```
 
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
-```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email thedevmark@gmail.com instead of using the issue tracker.
-
-## Credits
-
-- [Emad Adly][link-author]
-- [All Contributors][link-contributors]
+If you discover any security related issues, please email thedevgist@gmail.com instead of using the issue tracker.
 
 ## License
 
