@@ -135,11 +135,15 @@ public function show($uuid)
   return response()->json(['example' => $example]);
 }
 ```
+## Support
+
+If you are having general issues with this package, feel free to contact me on [Twitter](https://twitter.com/emadadly).
+
+If you believe you have found an issue, please report it using the [GitHub issue tracker](https://github.com/EmadAdly/laravel-uuid/issues), or better yet, fork the repository and submit a pull request.
+
+If you're using this package, I'd love to hear your thoughts. Thanks!
 
 
-## Security
-
-If you discover any security related issues, please email thedevgist@gmail.com instead of using the issue tracker.
 
 ## License
 
