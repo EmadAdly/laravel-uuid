@@ -1,7 +1,7 @@
 <?php
 namespace Emadadly\LaravelUuid;
 
-use Emadadly\LaravelUuid\UUIDManager;
+use Ramsey\Uuid\Uuid;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 trait Uuids
@@ -14,7 +14,7 @@ trait Uuids
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->{config('uuid.default_uuid_column')} = UUIDManager::generate();
+            $model->{config('uuid.default_uuid_column')} = strtoupper(Uuid::uuid4()->toString());
         });
         static::saving(function ($model) {
             $original_uuid = $model->getOriginal(config('uuid.default_uuid_column'));
