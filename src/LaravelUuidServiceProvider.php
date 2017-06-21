@@ -34,8 +34,6 @@ class LaravelUuidServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(UUIDManager::class, function () {
-            return new UUIDManager();
-        });
+     //
     }
 }
