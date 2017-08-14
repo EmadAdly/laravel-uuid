@@ -1,7 +1,8 @@
 <?php
-use PHPUnit\Framework\TestCase;
+// use PHPUnit\Framework\TestCase;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
-class DemoTest extends TestCase
+class DemoTest extends BaseTestCase
 {
     public function testSomethingIsTrue()
     {
