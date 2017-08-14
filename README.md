@@ -70,7 +70,7 @@ php artisan vendor:publish --provider="Emadadly\LaravelUuid\LaravelUuidServicePr
 
 and set your default_uuid_column setting, if you have an app-wide default.
 
-Our package assumes the column is `uuid` by default. If you want to replace the default `id` follow [these steps.](#Replacing-default-ID-with-UUID)
+Our package assumes the column is `uuid` by default. If you want to replace the default `id` follow [these steps.](#replacing-default-id-with-uuid)
 
 ## Usage
 
