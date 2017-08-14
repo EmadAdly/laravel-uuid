@@ -140,7 +140,7 @@ public function show($uuid)
 
 If you want to replace the default id column with the uuid be sure to set `'default_uuid_column' => 'uuid',` to `'default_uuid_column' => 'id',` in the `config\uuid.php` file.
 
-On your migration(s), change the id column types from `increments` to `uuid` as well as adding the primary key like this. This applies to model relationships columns as well
+On your migration(s), change the id column type from `increments` to `uuid` as well as manually adding the primary key. *Note: This applies to model relationship columns, if the relationship model will use a UUID, the column type should reflect that*
 
 ``` php
 Schema::create('users', function (Blueprint $table) {
@@ -148,6 +148,7 @@ Schema::create('users', function (Blueprint $table) {
   $table->uuid('id')->unique();
   $table->primary('id');
   ....
+  // relationship model uses UUID
   $table->uuid('model_id');
   ....
   $table->timestamps();
