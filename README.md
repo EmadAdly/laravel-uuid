@@ -148,7 +148,7 @@ Schema::create('users', function (Blueprint $table) {
   $table->uuid('id')->unique();
   $table->primary('id');
   ....
-  // relationship model uses UUID
+  // related model uses UUID, must change type
   $table->uuid('model_id');
   ....
   $table->timestamps();
