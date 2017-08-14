@@ -68,9 +68,9 @@ You could also publish the config file:
 php artisan vendor:publish --provider="Emadadly\LaravelUuid\LaravelUuidServiceProvider"
 ```
 
-and set your default_uuid_column setting, if you have an app-wide default. 
+and set your default_uuid_column setting, if you have an app-wide default.
 
-Our package assume the column is `uuid` by default.
+Our package assumes the column is `uuid` by default. If you want to replace the default `id` follow [these steps.](#replacing-default-id-with-uuid)
 
 ## Usage
 
@@ -135,6 +135,49 @@ public function show($uuid)
   return response()->json(['example' => $example]);
 }
 ```
+
+#### Replacing default ID with UUID
+
+If you want to replace the default id column with the uuid be sure to set `'default_uuid_column' => 'uuid',` to `'default_uuid_column' => 'id',` in the `config\uuid.php` file.
+
+On your migration(s), change the id column type from `increments` to `uuid` as well as manually adding the primary key. *Note: This also applies to model relationship columns, if the related model is using an UUID, the column type should reflect that*
+
+``` php
+Schema::create('users', function (Blueprint $table) {
+
+  $table->uuid('id')->unique();
+  $table->primary('id');
+  ....
+  // related model uses UUID, must change type
+  $table->uuid('model_id');
+  ....
+  $table->timestamps();
+});
+```
+
+Then on the model(s) you will need to set the incrementing flag to false.
+
+``` php
+use Illuminate\Database\Eloquent\Model;
+use Emadadly\LaravelUuid\Uuids;
+
+class ExampleModel extends Model
+{
+  use Uuids;
+  ....
+
+  /**
+  * Indicates if the IDs are auto-incrementing.
+  *
+  * @var bool
+  */
+  public $incrementing = false;
+
+  ....
+}
+```
+
+
 ## Support
 
 If you are having general issues with this package, feel free to contact me on [Twitter](https://twitter.com/emadadly).
