@@ -15,7 +15,8 @@ trait Uuids
         parent::boot();
 
         static::creating(function ($model) {
-            $column = config('uuid.default_uuid_column');
+            $defaultUuidColumn = config('uuid.default_uuid_column');
+            $column = str_replace('{table}', $defaultUuidColumn, $model->getTable());
 
             if (!$model->{$column}) {
                 $model->{$column} = strtoupper(Uuid::uuid4()->toString());
@@ -23,7 +24,8 @@ trait Uuids
         });
 
         static::saving(function ($model) {
-            $column = config('uuid.default_uuid_column');
+            $defaultUuidColumn = config('uuid.default_uuid_column');
+            $column = str_replace('{table}', $defaultUuidColumn, $model->getTable());
 
             $original_uuid = $model->getOriginal($column);
             if ($original_uuid !== $model->{$column}) {
@@ -46,7 +48,8 @@ trait Uuids
             throw (new ModelNotFoundException)->setModel(get_class($this));
         }
 
-        $column = config('uuid.default_uuid_column');
+        $defaultUuidColumn = config('uuid.default_uuid_column');
+        $column = str_replace('{table}', $defaultUuidColumn, $this->getTable());
 
         $results = $query->where($column, $uuid);
 
