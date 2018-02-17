@@ -13,23 +13,31 @@ trait Uuids
     protected static function boot()
     {
         parent::boot();
+
         static::creating(function ($model) {
-            if (!$model->{config('uuid.default_uuid_column')}) {
-                $model->{config('uuid.default_uuid_column')} = strtoupper(Uuid::uuid4()->toString());
+            $defaultUuidColumn = config('uuid.default_uuid_column');
+            $column = str_replace('{table}', $defaultUuidColumn, $model->getTable());
+
+            if (!$model->{$column}) {
+                $model->{$column} = strtoupper(Uuid::uuid4()->toString());
             }
         });
+
         static::saving(function ($model) {
-            $original_uuid = $model->getOriginal(config('uuid.default_uuid_column'));
-            if ($original_uuid !== $model->{config('uuid.default_uuid_column')}) {
-                $model->{config('uuid.default_uuid_column')} = $original_uuid;
+            $defaultUuidColumn = config('uuid.default_uuid_column');
+            $column = str_replace('{table}', $defaultUuidColumn, $model->getTable());
+
+            $original_uuid = $model->getOriginal($column);
+            if ($original_uuid !== $model->{$column}) {
+                $model->{$column} = $original_uuid;
             }
         });
     }
 
     /**
-     * Scope  by uuid 
+     * Scope  by uuid
      * @param  string  uuid of the model.
-     * 
+     *
     */
     public function scopeUuid($query, $uuid, $first = true)
     {
@@ -39,9 +47,12 @@ trait Uuids
         {
             throw (new ModelNotFoundException)->setModel(get_class($this));
         }
-    
-        $results = $query->where(config('uuid.default_uuid_column'), $uuid);
-    
+
+        $defaultUuidColumn = config('uuid.default_uuid_column');
+        $column = str_replace('{table}', $defaultUuidColumn, $this->getTable());
+
+        $results = $query->where($column, $uuid);
+
         return $first ? $results->firstOrFail() : $results;
     }
 
