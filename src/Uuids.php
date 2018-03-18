@@ -10,9 +10,8 @@ trait Uuids
     /**
      * Boot function from laravel.
      */
-    protected static function boot()
+    protected static function bootUuids()
     {
-        parent::boot();
         static::creating(function ($model) {
             if (!$model->{config('uuid.default_uuid_column')}) {
                 $model->{config('uuid.default_uuid_column')} = strtoupper(Uuid::uuid4()->toString());
