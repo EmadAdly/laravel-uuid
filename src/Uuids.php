@@ -14,7 +14,7 @@ trait Uuids
     {
         static::creating(function ($model) {
             if (!$model->{config('uuid.default_uuid_column')}) {
-                $model->{config('uuid.default_uuid_column')} = strtoupper(Uuid::uuid4()->toString());
+                $model->{config('uuid.default_uuid_column')} = Uuid::uuid4()->toString();
             }
         });
         static::saving(function ($model) {
