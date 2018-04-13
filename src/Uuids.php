@@ -32,7 +32,7 @@ trait Uuids
     */
     public function scopeUuid($query, $uuid, $first = true)
     {
-        $match = preg_match('/^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/', $uuid);
+        $match = preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/', $uuid);
 
         if (!is_string($uuid) || $match !== 1)
         {
