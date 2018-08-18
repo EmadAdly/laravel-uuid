@@ -82,7 +82,7 @@ When using the migration you should add `uuid` as column type, and set the name 
 ``` php
 $table->uuid('uuid');
 ```
-it's will create column uuin name and a char(36) inside of our database schema, To be ready to receive Uuids.
+it's will create column uuid name and a char(36) inside of our database schema, To be ready to receive Uuids.
 
 
 
