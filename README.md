@@ -53,7 +53,15 @@ Run composer update to download the package
  composer update
 ```
 
-Finally, you'll also need to add the ServiceProvider in `config/app.php`
+Finally, you'll also need to add the ServiceProvider
+
+**Laravel 5.5 and above**
+
+Uses package auto discovery feature, no need to edit the config/app.php file.
+
+**Laravel 5.4 and below**
+
+You need to add the ServiceProvider in `config/app.php` with the following
 
 ``` php
 'providers' => [
