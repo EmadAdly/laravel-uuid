@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 <!-- [![Total Downloads][ico-downloads]][link-downloads] -->
 
-A simple, automatic UUID generator for any model based on Laravel 5.7, By using this package when each new entry you will get the following :
+A simple, automatic UUID generator for any model based on Laravel 5.5 and above, By using this package when each new entry you will get the following :
 
 * Generate `uuid` automatically .
 * Assign it to `uuid` field in database automatically.
