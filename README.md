@@ -3,9 +3,18 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
+<!-- [![Coverage Status][ico-scrutinizer]][link-scrutinizer -->
 [![Quality Score][ico-code-quality]][link-code-quality]
-<!-- [![Total Downloads][ico-downloads]][link-downloads] -->
+[![Total Downloads][ico-downloads]][link-downloads]
+
+[link-packagist]: https://packagist.org/packages/emadadly/laravel-uuid
+[link-travis]: https://travis-ci.org/EmadAdly/laravel-uuid
+[link-scrutinizer]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid
+[link-downloads]: https://packagist.org/packages/emadadly/laravel-uuid
+[link-author]: https://github.com/emadadly
+[link-contributors]: ../../contributors
+
 
 A simple, automatic UUID generator for any model based on Laravel 5.5 and above, By using this package when each new entry you will get the following :
 
@@ -200,12 +209,12 @@ If you're using this package, I'd love to hear your thoughts. Thanks!
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/emadadly/laravel-uuid.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/emadadly/laravel-uuid/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/emadadly/laravel-uuid.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/emadadly/laravel-uuid.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/emadadly/laravel-uuid.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/emadadly/laravel-uuid.svg
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg
+[ico-travis]: https://img.shields.io/travis/emadadly/laravel-uuid/master.svg
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/emadadly/laravel-uuid.svg
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/emadadly/laravel-uuid.svg
+[ico-downloads]: https://img.shields.io/packagist/dt/emadadly/laravel-uuid.svg
 
 [link-packagist]: https://packagist.org/packages/emadadly/laravel-uuid
 [link-travis]: https://travis-ci.org/EmadAdly/laravel-uuid
