@@ -2,8 +2,6 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-<!-- [![Coverage Status][ico-scrutinizer]][link-scrutinizer -->
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -14,7 +12,6 @@
 [link-downloads]: https://packagist.org/packages/emadadly/laravel-uuid
 [link-author]: https://github.com/emadadly
 [link-contributors]: ../../contributors
-
 
 A simple, automatic UUID generator for any model based on Laravel 5.5 and above, By using this package when each new entry you will get the following :
 
