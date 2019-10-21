@@ -14,7 +14,7 @@ trait Uuids
     {
         static::creating(function ($model) {
             if (!$model->{config('uuid.default_uuid_column')}) {
-                $model->{config('uuid.default_uuid_column')} = strtoupper(Uuid::uuid4()->toString());
+                $model->{config('uuid.default_uuid_column')} = Uuid::uuid4()->toString();
             }
         });
         static::saving(function ($model) {
@@ -32,7 +32,7 @@ trait Uuids
     */
     public function scopeUuid($query, $uuid, $first = true)
     {
-        $match = preg_match('/^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/', $uuid);
+        $match = preg_match('/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/', $uuid);
 
         if (!is_string($uuid) || $match !== 1)
         {

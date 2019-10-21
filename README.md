@@ -2,12 +2,18 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
 [![Quality Score][ico-code-quality]][link-code-quality]
-<!-- [![Total Downloads][ico-downloads]][link-downloads] -->
+[![Total Downloads][ico-downloads]][link-downloads]
 
-A simple, automatic UUID generator for any model based on Laravel 5.5 , By using this package when each new entry you will get the following :
+[link-packagist]: https://packagist.org/packages/emadadly/laravel-uuid
+[link-travis]: https://travis-ci.org/EmadAdly/laravel-uuid
+[link-scrutinizer]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/emadadly/laravel-uuid
+[link-downloads]: https://packagist.org/packages/emadadly/laravel-uuid
+[link-author]: https://github.com/emadadly
+[link-contributors]: ../../contributors
+
+A simple, automatic UUID generator for any model based on Laravel 5.5 and above, By using this package when each new entry you will get the following :
 
 * Generate `uuid` automatically .
 * Assign it to `uuid` field in database automatically.
@@ -53,7 +59,15 @@ Run composer update to download the package
  composer update
 ```
 
-Finally, you'll also need to add the ServiceProvider in `config/app.php`
+Finally, you'll also need to add the ServiceProvider
+
+**Laravel 5.5 and above**
+
+Uses package auto discovery feature, no need to edit the config/app.php file.
+
+**Laravel 5.4 and below**
+
+You need to add the ServiceProvider in `config/app.php` with the following
 
 ``` php
 'providers' => [
@@ -82,7 +96,7 @@ When using the migration you should add `uuid` as column type, and set the name 
 ``` php
 $table->uuid('uuid');
 ```
-it's will create column uuin name and a char(36) inside of our database schema, To be ready to receive Uuids.
+it's will create column uuid name and a char(36) inside of our database schema, To be ready to receive Uuids.
 
 
 
@@ -192,12 +206,12 @@ If you're using this package, I'd love to hear your thoughts. Thanks!
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/emadadly/laravel-uuid.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/emadadly/laravel-uuid/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/emadadly/laravel-uuid.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/emadadly/laravel-uuid.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/emadadly/laravel-uuid.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/emadadly/laravel-uuid.svg
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg
+[ico-travis]: https://img.shields.io/travis/emadadly/laravel-uuid/master.svg
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/emadadly/laravel-uuid.svg
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/emadadly/laravel-uuid.svg
+[ico-downloads]: https://img.shields.io/packagist/dt/emadadly/laravel-uuid.svg
 
 [link-packagist]: https://packagist.org/packages/emadadly/laravel-uuid
 [link-travis]: https://travis-ci.org/EmadAdly/laravel-uuid
