@@ -1,5 +1,5 @@
 {
-    "name": "emadadly/laravel-uuid",
+    "name": "leganz/laravel-uuid",
     "type": "library",
     "description": "laravel uuid a simple, automatic UUID generator for any model based on Laravel.",
     "keywords": [
