@@ -3,6 +3,7 @@ namespace Emadadly\LaravelUuid;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\Eloquent\Model;
 
 trait Uuids
 {
@@ -12,7 +13,10 @@ trait Uuids
      */
     protected static function bootUuids()
     {
-        static::creating(function ($model) {
+        static::creating(function (Model $model) {
+            if (config('uuid.default_uuid_column') === 'id') {
+                $model->incrementing = false;
+            }
             if (!$model->{config('uuid.default_uuid_column')}) {
                 $model->{config('uuid.default_uuid_column')} = Uuid::uuid4()->toString();
             }
@@ -39,7 +43,7 @@ trait Uuids
             throw (new ModelNotFoundException)->setModel(get_class($this));
         }
     
-        $results = $query->where(config('uuid.default_uuid_column'), $uuid);
+        $results = $query->where($this->getTable().'.'.config('uuid.default_uuid_column'), $uuid);
     
         return $first ? $results->firstOrFail() : $results;
     }
